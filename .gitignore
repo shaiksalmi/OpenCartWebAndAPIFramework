@@ -9,6 +9,7 @@ node_modules/
 /reports/
 /allure-report/
 /allure-results/
+/report/html-report/
 
 # env files (confidentials) :
 config/.env.*
