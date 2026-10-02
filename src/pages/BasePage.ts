@@ -19,8 +19,8 @@ export class BasePage {
         this.page = page;
         this.logo = page.getByRole('img',{ name: 'naveenopencart' });
         this.searchBox = page.getByRole('textbox', { name: 'Search' });
-        this.searchIcon = page.locator('div#search button');
-        this.cartButton = page.locator('div#cart button');
+        this.searchIcon = page.locator('div#search button[type="button"]');
+        this.cartButton = page.locator('div#cart button.dropdown-toggle');
         this.footerLinks = page.locator('footer a');
     }
 
