@@ -70,8 +70,7 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
           FIRSTNAME: ${{ secrets.FIRSTNAME }}
-          LASTNAME: ${{ secrets.LASTNAMENAME }}
-          EMAIL: ${{ secrets.EMAIL }}
+          LASTNAME: ${{ secrets.LASTNAME}}
           TELEPHONE: ${{ secrets.TELEPHONE}}
           REGPASSWORD: ${{ secrets.REGPASSWORD }}
           CONFIRMPASSWORD: ${{ secrets.CONFIRMPASSWORD }}
@@ -86,7 +85,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-html-report-${{ github.run_id }}
-          path: reports/html-report/
+          path: report/html-report/
           retention-days: 30
 
       - name: Upload Allure Results
@@ -97,10 +96,3 @@ jobs:
           path: allure-results/
           retention-days: 30
 
-      - name: Upload reportingLabs Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: reporting-labs-report-${{ github.run_id }}
-          path: reporting-labs/
-          retention-days: 30

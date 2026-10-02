@@ -27,7 +27,7 @@ return response.body;
     
 //Test 1: Create a user test + verify: AAA
 //POST -----> userID ----> GET / userID ---> verfiy
-test('Create a user test', async({ apiHelper }) =>{
+test('@regression Create a user test', async({ apiHelper }) =>{
 
     //create a user:
 
@@ -45,7 +45,7 @@ test('Create a user test', async({ apiHelper }) =>{
 //Test 2: Update a user test + verify:AAA
 //POST ---> userID ---> GET /userID --> PUT/userID ---> GET /userID ---> verify
 
-test('Update a user test', async({ apiHelper }) =>{
+test('regression Update a user test', async({ apiHelper }) =>{
 
     //update a user:
 
@@ -80,7 +80,7 @@ test('Update a user test', async({ apiHelper }) =>{
 //Test 3: Delete a user test + verify: AAA
 //POST ----> userID ---> GET/userID--> Delete/userID (204) --> GET/userID (404) --> verify
 
-test('Delete a user test', async ({ apiHelper }) =>{
+test('@regression Delete a user test', async ({ apiHelper }) =>{
 
    //1.create a user: 
    let userResponse = await createUser(apiHelper);

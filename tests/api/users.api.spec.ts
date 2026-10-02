@@ -15,7 +15,7 @@ test.describe.serial('running e2e go rest curd apis tests', () =>{
 
     //GET Test:
 
-    test('GET API - get all users', async({ apiHelper }) =>{
+    test('@smoke @regression GET API - get all users', async({ apiHelper }) =>{
 
        let response = await apiHelper.get('/public/v2/users', AUTH_HEADER);
        expect (response.status).toBe(200);
@@ -24,7 +24,7 @@ test.describe.serial('running e2e go rest curd apis tests', () =>{
     });
 
     //POST:
- test('POST API -- create a user', async ({ apiHelper }) => {
+ test('@regression POST API -- create a user', async ({ apiHelper }) => {
 
    //User JS Object:
 
@@ -44,7 +44,7 @@ test.describe.serial('running e2e go rest curd apis tests', () =>{
  })
 
 
- test('PUT API -- update a user', async ({ apiHelper }) => {
+ test('@regression PUT API -- update a user', async ({ apiHelper }) => {
 
    //User JS Object:
 
@@ -61,7 +61,7 @@ test.describe.serial('running e2e go rest curd apis tests', () =>{
   expect(response.body.status).toBe(userData.status);
  });
 
- test('DELETE API -- delete  a user', async ({ apiHelper }) => {
+ test('@regression DELETE API -- delete  a user', async ({ apiHelper }) => {
 
    
 
@@ -70,7 +70,7 @@ test.describe.serial('running e2e go rest curd apis tests', () =>{
   
  });
 
- test('GET API - get the deleted user', async({ apiHelper }) =>{
+ test('@regression GET API - get the deleted user', async({ apiHelper }) =>{
 
        let response = await apiHelper.get('/public/v2/users/${userId}', AUTH_HEADER);
        expect (response.status).toBe(404);

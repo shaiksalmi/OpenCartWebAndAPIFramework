@@ -12,14 +12,14 @@ test.skip('click on registration link', async ({ registrationPage }) => {
 
 test.skip('successful registration', async ({ registrationPage }) => {
   await registrationPage.clickOnRegister();
-
+const email = `pwautomation_${Date.now()}@open.com`;
   await registrationPage.fillRegistrationForm(
-    process.env.FIRSTNAME,
-    process.env.LASTNAME,
-    process.env.EMAIL,
-    process.env.TELEPHONE,
-    process.env.REGPASSWORD,
-    process.env.CONFIRMPASSWORD,
+    process.env.FIRSTNAME!,
+    process.env.LASTNAME!,
+    email,
+    process.env.TELEPHONE!,
+    process.env.REGPASSWORD!,
+    process.env.CONFIRMPASSWORD!,
 
   );
 

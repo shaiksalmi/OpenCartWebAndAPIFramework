@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 //web app --> intercept the network calls and log tthem.
 
-test('intercept and log requests', async ({ page })=>{
+test('@smoke intercept and log requests', async ({ page })=>{
 
     page.route('**/*', async (route)=> {
 
@@ -16,7 +16,7 @@ await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=commo
 
 //intercept with mocking:
 //mocking: fake data/response:
-test('mock search with fake JSON',async ({ page }) =>{
+test('@smoke mock search with fake JSON',async ({ page }) =>{
 
 
 //JS

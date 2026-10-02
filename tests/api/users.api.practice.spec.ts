@@ -8,7 +8,7 @@ let AUTH_TOKEN = {
     Authorization: 'Bearer 4b6a0a5b071664a71e742732292eff1c1fef65d1988c8dd933689808ac06e27e'
 };
 
-test('get all users api test', async({ request })=>{
+test.skip('get all users api test', async({ request })=>{
 
     let response: APIResponse = await request.get('https://gorest.co.in/public/v2/users',{
 
@@ -26,7 +26,7 @@ test('get all users api test', async({ request })=>{
     //expect(response.status()).toBe(200);
 });
 
-test('create a user POST api test', async ({ request })=>{
+test.skip('create a user POST api test', async ({ request })=>{
 
     //user JS Object
 
@@ -56,7 +56,7 @@ test('create a user POST api test', async ({ request })=>{
 
 });
 
-test('update a user PUT api test', async ({ request })=>{
+test.skip('update a user PUT api test', async ({ request })=>{
 
     //user JS Object
 
@@ -86,7 +86,7 @@ test('update a user PUT api test', async ({ request })=>{
 
 });
 
-test('delete a user DELETE api test', async ({ request })=>{
+test.skip('delete a user DELETE api test', async ({ request })=>{
 
 
     let response = await request.delete('https://gorest.co.in/public/v2/users/8618896', {

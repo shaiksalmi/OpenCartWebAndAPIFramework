@@ -5,10 +5,10 @@ import { test, expect } from '../src/fixtures/pagefixtures';
 test.beforeEach(async ({ loginPage}) =>{
 
     await loginPage.goToLoginPage();
-    await loginPage.doLogin(process.env.USERNAME,process.env.PASSWORD);
+    await loginPage.doLogin(process.env.USERNAME!,process.env.PASSWORD!);
 });
 
-test('verify product header',async ({ homePage, searchResultsPage, productInfoPage})=>{
+test('@smoke verify product header',async ({ homePage, searchResultsPage, productInfoPage})=>{
 
 
 
@@ -18,7 +18,7 @@ test('verify product header',async ({ homePage, searchResultsPage, productInfoPa
 
 });
 
-test('verify product images count', async ({ homePage,searchResultsPage, productInfoPage,page }) =>{
+test('@regression verify product images count', async ({ homePage,searchResultsPage, productInfoPage,page }) =>{
 
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook Pro');
@@ -27,7 +27,7 @@ test('verify product images count', async ({ homePage,searchResultsPage, product
 
 });
 
-test('verify product information/data',async({ homePage, searchResultsPage, productInfoPage,page})=>{
+test('@regression verify product information/data',async({ homePage, searchResultsPage, productInfoPage,page})=>{
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook Pro');
     
@@ -45,7 +45,7 @@ expect.soft(actaulProductInfoMap.get('extaxprice')).toBe('$2,000.00');
 
 })
     
-test('verify product added to cart', async ({ homePage, searchResultsPage, productInfoPage }) => {
+test('@regression verify product added to cart', async ({ homePage, searchResultsPage, productInfoPage }) => {
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook Pro');
 
@@ -59,23 +59,23 @@ test('verify product added to cart', async ({ homePage, searchResultsPage, produ
 
 //common features test:
 
-test('App logo exists on Login Page', async ({ basePage })=>{
+test('@smoke App logo exists on Login Page', async ({ basePage })=>{
 
 expect(await basePage.isLogoVisible()).toBeTruthy();
 
 });
 
-test('SearchBox exists on Login Page', async ({ basePage }) =>{
+test('@smoke SearchBox exists on Login Page', async ({ basePage }) =>{
 
     expect(await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test(' Cart exists on Login Page', async ({ basePage }) =>{
+test('@smoke  Cart exists on Login Page', async ({ basePage }) =>{
 
     expect(await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('Footers exists on Login Page', async ({ basePage }) =>{
+test('@smoke Footers exists on Login Page', async ({ basePage }) =>{
 
     expect(await basePage.getPageFootersCount()).toBeTruthy();
 })

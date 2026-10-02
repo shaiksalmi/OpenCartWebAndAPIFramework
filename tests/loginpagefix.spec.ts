@@ -13,7 +13,7 @@ test.beforeEach(async ({ loginPage,page }) => {
 });
 
 //AAA
-test('login page title test', async ({ loginPage }) =>{
+test('@smoke login page title test', async ({ loginPage }) =>{
 
     let pageTitle = await loginPage.getPageTitle();
     console.log('Login page title : ', pageTitle);
@@ -21,11 +21,11 @@ test('login page title test', async ({ loginPage }) =>{
     expect(pageTitle).toBe('Account Login');
 });
 
-test('forgot pwd link exist test', async ({ loginPage }) => {
+test('@regression forgot pwd link exist test', async ({ loginPage }) => {
 expect(await loginPage.isForgottenPwdLinkExist()).toBeTruthy();
 });
 
-test('user is able to login to app', async ({ loginPage, homePage})=>{
+test('regression user is able to login to app', async ({ loginPage, homePage})=>{
 
     await loginPage.doLogin(process.env.USERNAME!, process.env.PASSWORD!);
     
@@ -36,7 +36,7 @@ test('user is able to login to app', async ({ loginPage, homePage})=>{
 let testData = CsvHelper.readCsv('src/testdata/logindata.csv');
 for(let row of testData){
 
-test(`login to app with invalid credentials- ${row.usernmae} - ${row.password}`,async({ loginPage,homePage})=>{
+test(`regression login to app with invalid credentials- ${row.usernmae} - ${row.password}`,async({ loginPage,homePage})=>{
 
     await loginPage.doLogin(row.username,row.password);
     expect(await loginPage.isInvalidLoginErrorDisplayed()).toBeTruthy();
@@ -47,7 +47,7 @@ test(`login to app with invalid credentials- ${row.usernmae} - ${row.password}`,
 let testJSONData = JsonHelper.readJson('src/testdata/logindata.json');
 for(let row of testJSONData) {
 
-    test(`login to app with invalid credentials with Json Data- ${row.username} - ${row.password}`,async({ loginPage,homePage})=>{
+    test(`@regression login to app with invalid credentials with Json Data- ${row.username} - ${row.password}`,async({ loginPage,homePage})=>{
        
         await loginPage.doLogin(row.username, row.password);
         expect (await loginPage.isInvalidLoginErrorDisplayed()).toBeTruthy();
@@ -57,23 +57,23 @@ for(let row of testJSONData) {
 
 //common features test:
 
-test('App logo exists on Login Page', async ({ basePage })=>{
+test('@smoke App logo exists on Login Page', async ({ basePage })=>{
 
 expect(await basePage.isLogoVisible()).toBeTruthy();
 
 });
 
-test('SearchBox exists on Login Page', async ({ basePage }) =>{
+test('@smoke SearchBox exists on Login Page', async ({ basePage }) =>{
 
     expect(await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test(' Cart exists on Login Page', async ({ basePage }) =>{
+test('@smoke Cart exists on Login Page', async ({ basePage }) =>{
 
     expect(await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('Footers exists on Login Page', async ({ basePage }) =>{
+test('@smoke Footers exists on Login Page', async ({ basePage }) =>{
 
     expect(await basePage.getPageFootersCount()).toBeTruthy();
 })

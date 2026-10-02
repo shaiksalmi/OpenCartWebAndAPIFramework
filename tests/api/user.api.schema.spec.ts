@@ -49,7 +49,7 @@ let userSchema = {
   ]
 };
 
-test('get a user - schema test', async({ apiHelper }) => {
+test('@smoke get a user - schema test', async({ apiHelper }) => {
 
     //User JS Object:
 
