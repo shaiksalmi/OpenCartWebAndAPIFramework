@@ -1,0 +1,3 @@
+user creds: manish.wilson561@test.com - pw123
+searchKey:  macbook
+product name:  MacBook Pro

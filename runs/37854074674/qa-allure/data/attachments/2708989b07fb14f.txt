@@ -1,0 +1,8 @@
+{
+  id: 8657072,
+  name: 'sangameshNair',
+  email: 'pwautomation_1791498885306@open.com',
+  gender: 'male',
+  status: 'active'
+} 200
+{ message: 'Resource not found' } 404
