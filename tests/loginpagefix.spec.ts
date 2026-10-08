@@ -47,7 +47,7 @@ test(`regression login to app with invalid credentials- ${row.usernmae} - ${row.
 let testJSONData = JsonHelper.readJson('src/testdata/logindata.json');
 for(let row of testJSONData) {
 
-    test(`@regression login to app with invalid credentials with Json Data- ${row.username} - ${row.password}`,async({ loginPage,homePage})=>{
+    test(`@login to app with invalid credentials with Json Data- ${row.username} - ${row.password}`,async({ loginPage,homePage})=>{
        
         await loginPage.doLogin(row.username, row.password);
         expect (await loginPage.isInvalidLoginErrorDisplayed()).toBeTruthy();
